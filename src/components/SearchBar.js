@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Segment, Form, Label, Input, Container } from "semantic-ui-react";
-import PropTypes from "prop-types";
 
 class SearchBar extends Component {
     static defaultProps = {};
@@ -16,7 +15,7 @@ class SearchBar extends Component {
     onSearch = e => {
         e.preventDefault();
         
-        //Todo: make sure we call callback from parent component
+        this.props.onSearch(this.state.term);
     };
     
     render() {
